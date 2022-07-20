@@ -1,10 +1,13 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/bb/raphael_blankson/devops-microservices/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/bb/raphael_blankson/devops-microservices/tree/main)
 
+# Operatioanlize a Machine Learning Microservice API using Kubernetes
+
 ## Project Overview
 
 In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing).
+This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
 ### Project Tasks
 
@@ -34,17 +37,15 @@ python3 -m pip install --user virtualenv
 python3 -m virtualenv --python=<path-to-Python3.7> .devops
 source .devops/bin/activate
 ```
-* Run `make install` to install the necessary dependencies
+* Or you can run `make setup` to create a virtual environment in your home directory called `.devops`
+
+* Run `make install` to install the necessary dependencies for the project.
 
 ### Running `app.py`
 
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+3. Upload to docker hub: `./upload_docker.sh`
+  - change the dockerhub username to your username or leave it as it to use my public dockerhub image therafael/udaflaskml
+4. Run in Kubernetes:  `./run_kubernetes.sh` to deploy the up to kubernetes.
 
-### Kubernetes Steps
-
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
