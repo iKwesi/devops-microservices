@@ -37,7 +37,7 @@ python3 -m pip install --user virtualenv
 python3 -m virtualenv --python=<path-to-Python3.7> .devops
 source .devops/bin/activate
 ```
-* Or you can run `make setup` to create a virtual environment in your home directory called `.devops`
+* Or you can run `make setup` to create and activate a virtual environment in your home directory called `.devops`
 
 * Run `make install` to install the necessary dependencies for the project.
 
